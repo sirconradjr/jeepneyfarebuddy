@@ -1,0 +1,9 @@
+<resources>
+    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/text_input_outline</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="android:textColorHint">@color/black</item>
+        <item name="boxStrokeErrorColor">@color/orange</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

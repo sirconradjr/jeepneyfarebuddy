@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Jeepney Fare Buddy</string>
+    <string name="welcomemsg">Hello there, Welcome back!</string>
+    <string name="signinprompt">Sign in to continue</string>
+    <string name="usernamehint">Username</string>
+    <string name="passwordhint">Password</string>
+    <string name="forgot">"Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="register">New User? Sign Up now!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="signup">Register</string>
+    <string name="already_have_an_account_log_in">Already have an account? Log in</string>
 </resources>

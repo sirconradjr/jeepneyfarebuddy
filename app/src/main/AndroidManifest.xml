@@ -37,6 +37,11 @@
             android:hardwareAccelerated="true"
             android:theme="@style/Theme.JeepneyFareBuddy" />
 
+        <activity
+            android:name=".signup"
+            android:hardwareAccelerated="true"
+            android:theme="@style/Theme.JeepneyFareBuddy" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
