@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="mmcm.shs.jeepneyfarebuddy" />
+                  <option name="mobileSdkAppId" value="1:563677411874:android:76cd3fb379d1946329287b" />
+                  <option name="projectId" value="device-streaming-039bbc84" />
+                  <option name="projectNumber" value="563677411874" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

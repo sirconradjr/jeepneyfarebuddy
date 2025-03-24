@@ -9,6 +9,7 @@
     <string name="register">New User? Sign Up now!</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="cpassword">Confirm Password</string>
     <string name="email_address">Email Address</string>
     <string name="last_name">Last Name</string>
     <string name="first_name">First Name</string>
@@ -16,4 +17,6 @@
     <string name="contact_number">Contact Number</string>
     <string name="signup">Register</string>
     <string name="already_have_an_account_log_in">Already have an account? Log in</string>
+    <string name="dobhint">Date of Birth</string>
+    <string name="confirmreg">Please review your inputted data</string>
 </resources>
