@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:id="@+id/resetconstraint"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logoImage2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:transitionName="logo_image"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/jeepneyfarebuddyicon" />
+
+        <TextView
+            android:id="@+id/welcome2"
+            android:layout_width="wrap_content"
+            android:transitionName="logo_text"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/bungee"
+            android:textColor="@color/black"
+            android:text="@string/resetpass"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/resetprompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/resetpromptmsg"
+            android:fontFamily="@font/antic"
+            android:textSize="18sp"
+            android:layout_marginTop="1dp"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/passemailreset"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                style="@style/CustomTextInputLayout"
+                android:hint="@string/email_address"
+                app:cursorColor="@color/apricot"
+                app:hintTextColor="@color/apricot"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:id="@+id/editpassreset"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                android:id="@+id/resetpassbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="140dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/apricot"
+                android:fontFamily="@font/antic"
+                android:textColor="@color/white"
+                android:text="@string/resetpassnow"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <ProgressBar
+
+            android:id="@+id/progressBarreset"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:animationResolution="@integer/google_play_services_version"
+            android:color="@drawable/progressbar"
+            android:layout_gravity="center" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

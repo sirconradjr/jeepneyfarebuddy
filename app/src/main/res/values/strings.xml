@@ -2,7 +2,7 @@
     <string name="app_name">Jeepney Fare Buddy</string>
     <string name="welcomemsg">Hello there, Welcome back!</string>
     <string name="signinprompt">Sign in to continue</string>
-    <string name="usernamehint">Username</string>
+    <string name="usernamehint">Email Address</string>
     <string name="passwordhint">Password</string>
     <string name="forgot">"Forgot Password?</string>
     <string name="login">Login</string>
@@ -19,4 +19,9 @@
     <string name="already_have_an_account_log_in">Already have an account? Log in</string>
     <string name="dobhint">Date of Birth</string>
     <string name="confirmreg">Please review your inputted data</string>
+    <string name="home">Home</string>
+    <string name="logout">Logout</string>
+    <string name="resetpass">We want to have you back</string>
+    <string name="resetpromptmsg">Please enter the email you used upon registration.</string>
+    <string name="resetpassnow">Reset my Password</string>
 </resources>
