@@ -3,6 +3,7 @@ package mmcm.shs.jeepneyfarebuddy;
 public class User {
 
     private String fullname, dateofbirth, contactnumber, emailaddress;
+    private int age;
 
     public User(){
 
@@ -10,6 +11,7 @@ public class User {
         this.dateofbirth = "";
         this.contactnumber = "";
         this.emailaddress = "";
+        this.age = 0;
 
     }
 
@@ -27,6 +29,14 @@ public class User {
 
     public String getdob(){
         return dateofbirth;
+    }
+
+    public void setAge(int age){
+        this.age = age;
+    }
+
+    public int getAge(){
+        return age;
     }
 
     public void setEmailaddress(String femail){

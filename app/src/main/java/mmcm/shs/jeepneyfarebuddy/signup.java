@@ -9,6 +9,7 @@ import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.net.NetworkRequest;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -16,6 +17,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -30,6 +32,11 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
 public class signup extends AppCompatActivity {
 
@@ -42,6 +49,7 @@ public class signup extends AppCompatActivity {
     DatabaseReference databaseReference;
     private boolean monitoringConnectivity = false;
     private boolean isConnected = true;
+    int age = 0;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -69,23 +77,23 @@ public class signup extends AppCompatActivity {
         materialDateBuilder.setTitleText("Select your birthdate");
         final MaterialDatePicker<Long> materialDatePicker = materialDateBuilder.build();
 
-        materialDatePicker.addOnPositiveButtonClickListener(
-                new MaterialPickerOnPositiveButtonClickListener() {
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void onPositiveButtonClick(Object selection) {
+        materialDatePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Long>() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onPositiveButtonClick(Long selection) {
+                LocalDate birthDate = Instant.ofEpochMilli(selection)
+                        .atZone(ZoneId.systemDefault())
+                        .toLocalDate();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+                String formattedDate = birthDate.format(formatter);
 
-                        dateOfBirth.setText(materialDatePicker.getHeaderText());
-                    }
-                });
-
-        dateOfBirth.setOnFocusChangeListener((v, hasFocus) -> {
-
-            if (hasFocus) {
-                materialDatePicker.show(getSupportFragmentManager(), "MATERIAL_DATE_PICKER");
+                dateOfBirth.setText(formattedDate);
+                age = calculateAge(birthDate);
             }
         });
 
+        dateOfBirth.setOnClickListener(v -> materialDatePicker.show(getSupportFragmentManager(), "MATERIAL_DATE_PICKER"));
 
         registerButton.setOnClickListener(v ->{
 
@@ -243,9 +251,21 @@ public class signup extends AppCompatActivity {
         u.setdob(date);
         u.setEmailaddress(mail);
         u.setContactnumber(contact);
+        u.setAge(age);
 
         String[] parts = mail.split("@");
         databaseReference.child("Users").child(parts[0]).setValue(u);
+    }
+
+    private int calculateAge(LocalDate birthDate) {
+        LocalDate currentDate = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            currentDate = LocalDate.now();
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            return Period.between(birthDate, currentDate).getYears();
+        }
+        return 0;
     }
 
     @Override

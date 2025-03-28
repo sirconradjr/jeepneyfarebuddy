@@ -9,7 +9,6 @@ import android.net.NetworkInfo;
 import android.net.NetworkRequest;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import com.google.android.material.snackbar.Snackbar;
@@ -35,7 +34,6 @@ public class login extends AppCompatActivity {
         register = findViewById(R.id.registernewuser);
         login = findViewById(R.id.loginbutton);
         reset = findViewById(R.id.forgotpassword);
-        ProgressBar bar = findViewById(R.id.progressBarlogin);
         eusername = findViewById(R.id.editusername);
         epass = findViewById(R.id.editpassword);
         lusername = findViewById(R.id.username);
